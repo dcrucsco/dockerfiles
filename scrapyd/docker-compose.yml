@@ -1,0 +1,13 @@
+scrapyd:
+  image: dcrucsco/scrapyd
+  ports:
+    - "6800:6800"
+  restart: always
+
+scrapy:
+  image: dcrucsco/scrapyd
+  command: bash
+  volumes:
+    - .:/code
+  working_dir: /code
+  restart: always
